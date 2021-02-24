@@ -1,9 +1,15 @@
 package Ejercicio4;
+
 import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class CalculoIMC {
-    public static void main(String[] args){
+    // He creado el método CalcularIMC, porque lo voy a usar después en el ejercicio 6
+    public static void main(String[] args) {
+        CalcularIMC();
+    }
+
+    public static double CalcularIMC() {
         Scanner entrada = new Scanner(System.in);
         System.out.print("Introduce una altura en metros con el formato 'x,xx': ");
         double num1 = entrada.nextDouble();
@@ -13,7 +19,8 @@ public class CalculoIMC {
         DecimalFormat dec = new DecimalFormat("###.##"); // DecimalFormat permite redondear a x decimales
         persona1.setAltura(num1);
         persona1.setMasa(num2);
-        double indice = persona1.getMasa()/Math.pow(persona1.getAltura(), 2);
+        double indice = persona1.getMasa() / Math.pow(persona1.getAltura(), 2);
         System.out.println("El IMC de esta persona es " + dec.format(indice));
+        return indice;
     }
 }
